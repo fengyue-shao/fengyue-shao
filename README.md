@@ -1,56 +1,106 @@
-# Hi, I'm fengyue 👋
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/header-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/header-light.svg" />
+    <img alt="Fengyue Shao — Native Desktop &amp; Agentic Systems" src="./assets/header-light.svg" width="100%" />
+  </picture>
+</div>
 
-学生开发者，主要使用 **C++20、Qt 6 与 QML**，关注 **Windows 桌面工程、系统接口与 Agent**。
+<br />
 
-喜欢从真实问题出发，把系统能力做成能日常使用的工具。从界面交互、线程与异步生命周期，到插件边界和结果验证，都是项目的一部分。
+<sub>**`01 // THESIS & FOCUS`**</sub>
 
-## 正在做的事
+我是一名关注 **Windows 原生桌面工程、系统接口与 Agent 运行时** 的学生开发者，主力技术栈为 **C++20、Qt 6 与 QML**。
 
-- 持续开发 **Windows Sidebar**，将系统监控、设备控制与桌面交互整合到一个应用中。
-- 探索 **本地模型与 Agent 工作流**，实践模型服务、工具调用与执行结果验证。
-- 设计 **C++ Agent 运行时与桌面插件的接入方式**，重点考虑权限、状态管理和验收；这部分仍在规划与实验中。
-- 围绕项目学习现代 C++、Windows API、OpenCV 与端侧系统开发。
+相比孤立的 Demo，我更倾向于从真实使用场景出发，把底层系统能力打磨成可日常运行的工具——从界面交互帧率、异步线程生命周期，到跨进程插件隔离与 Agent 执行结果的验收闭环，均视为同一工程整体的不同切面。
 
-## 主要项目
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <sub><code>DESKTOP SHELL</code></sub><br />
+      <strong>原生桌面与交互架构</strong><br /><br />
+      持续迭代 <b>Windows Sidebar</b>，将系统遥测、音频媒体控制、设备状态与低打扰桌面交互整合于统一的 Qt Quick / WinRT 宿主之中。
+    </td>
+    <td width="33%" valign="top">
+      <sub><code>RUNTIME BOUNDARY</code></sub><br />
+      <strong>跨进程隔离与插件协议</strong><br /><br />
+      设计受限 JSON IPC 插件与 C++ Agent 接入架构。宿主不加载外部 UI 代码，通过显式的能力声明、权限门控与状态管理保障系统边界安全。
+    </td>
+    <td width="33%" valign="top">
+      <sub><code>VERIFIABLE AGENT</code></sub><br />
+      <strong>端侧模型与可验证工作流</strong><br /><br />
+      基于本地推理服务实践工具调用与任务编排，重点探索「任务契约 — 执行证据 — 结果验收」的人机协作闭环。
+    </td>
+  </tr>
+</table>
 
-### Windows Sidebar
+<br />
 
-一个基于 **C++20 / Qt 6 / QML** 的 Windows 桌面控制应用，也是持续迭代的主要项目。
+<sub>**`02 // FLAGSHIP SYSTEM`**</sub>
 
-最初从侧边监控栏起步，目前以顶部悬停唤出的控制栏为主要交互，整合系统状态、音频与媒体、网络设备、通知、剪贴板和专注工具。
+### Windows Sidebar &nbsp;<sub>`C++20` · `Qt 6 / QML` · `Win32 / WinRT` · `Core Audio` · `JSON IPC`</sub>
 
-- **桌面交互**：精简 / 展开控制栏、自动隐藏、多屏选择、主题与模块设置。
-- **系统集成**：Win32 / WinRT / Core Audio、媒体会话控制、通知与设备操作。
-- **活动展示**：灵动岛汇总持续活动、提醒与操作结果；自由桌面卡片仍为可选开发预览。
-- **插件架构**：具体插件独立进程运行，通过受限 JSON 协议与宿主协作，主体不加载插件 UI 代码。
+一个围绕 Windows 日常高频操作构建的原生桌面控制中心。项目由早期侧边监控栏演进为**顶部悬停唤出控制栏 + 灵动岛活动视图**的双层交互形态，兼顾即用性与极简视觉克制。
 
-后续希望让用户和 Agent 都能通过明确的能力和权限边界使用桌面工具。Agent 接入仍在设计中；当前源码暂未公开。
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/architecture-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/architecture-light.svg" />
+    <img alt="Windows Sidebar &amp; Agent Runtime Architecture" src="./assets/architecture-light.svg" width="100%" />
+  </picture>
+</div>
 
-### 本地模型与 Agent 实验
+- **桌面交互层（Interaction Surface）**：支持精简/展开态平滑切换、自动隐藏、多显示器拓扑选择与模块化主题配置；通过**灵动岛（Dynamic Island HUD）**聚合后台持续活动、提醒与即时操作反馈（自由桌面卡片处于可选预览阶段）。
+- **原生系统集成（Native System Integration）**：深度对接 `Win32`、`C++/WinRT` 与 `Core Audio`，覆盖系统资源监控、基于 GSMTC 的全局媒体会话控制、网络与外设状态、系统通知及剪贴板流转。
+- **沙箱插件与 Agent 演进（Isolated Plugin & Agent Boundary）**：插件以独立子进程运行，经由受限 JSON 协议与宿主通信，杜绝第三方 UI 代码直接注入主进程；正在规划将这一能力边界向本地 Agent 开放，使人类用户与 Agent 共用一套可审计、可回滚的桌面工具接口 *(源码暂未公开)*。
 
-- 使用 **llama.cpp** 运行本地模型，验证模型服务与工具调用。
-- 实验 **RAG / NL2SQL**，探索自然语言问题、数据关系与数据库查询的衔接。
-- 研究任务描述、执行证据、结果验收，以及人与 Agent 的协作流程。
+<br />
 
-### 视觉、图形与嵌入式实践
+<sub>**`03 // APPLIED EXPLORATIONS`**</sub>
 
-- **OpenCV**：棋盘格标定、去畸变、Harris 角点、ArUco 与 `solvePnP`。
-- **Vulkan**：使用 Vulkan-Hpp RAII 与 GLFW 实践基础渲染流程。
-- **Raspberry Pi Pico 2 W**：使用 C/C++ 与 I²C 驱动 OLED。
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>Local LLM &amp; Agent Engineering &nbsp;<sub><code>AI SYSTEMS</code></sub></h4>
+      <ul>
+        <li><b>端侧推理与工具链</b>：使用 <code>llama.cpp</code> 部署本地模型服务，验证低延迟结构化输出与确定性函数调用。</li>
+        <li><b>数据与语义桥接</b>：实践 <code>RAG</code> 与 <code>NL2SQL</code>（基于 PostgreSQL），打通自然语言意图、Schema 约束与关系型查询验证。</li>
+        <li><b>可验收执行流</b>：研究 Agent 任务描述规范、运行期证据采集（Execution Evidence）与分步验收机制。</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h4>Vision, Graphics &amp; Embedded &nbsp;<sub><code>LOW-LEVEL &amp; PERCEPTION</code></sub></h4>
+      <ul>
+        <li><b>计算机视觉（OpenCV）</b>：完成棋盘格相机标定、畸变校正、Harris 角点检测、ArUco 姿态估计与 <code>solvePnP</code> 实践。</li>
+        <li><b>现代图形接口（Vulkan）</b>：基于 <code>Vulkan-Hpp RAII</code> 与 <code>GLFW</code> 构建现代显式渲染管线基础流程。</li>
+        <li><b>微控制器开发（Pico 2 W）</b>：使用 C/C++ SDK 与 <code>I²C</code> 协议编写驱动并控制 OLED 显示模块。</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-## 技术与实践
+<br />
 
-| 方向 | 主要使用或实践内容 |
-| --- | --- |
-| 语言 | C++17/20、C、Python |
-| 桌面与系统 | Qt 6、Qt Quick / QML、Win32、C++/WinRT、Core Audio |
-| 工程工具 | CMake、MSVC、Git、Docker、Visual Studio、VS Code |
-| AI 与数据实验 | llama.cpp、LLM 工具调用、RAG、NL2SQL、PostgreSQL |
-| 视觉与图形实验 | OpenCV、相机标定、ArUco、Vulkan、GLFW |
-| 嵌入式实验 | Raspberry Pi Pico SDK、I²C、OLED |
+<sub>**`04 // TECHNICAL MATRIX & METHODOLOGY`**</sub>
 
-## 学习方式
+| Domain | Core Stack & Practical Scope |
+| :--- | :--- |
+| **`Languages`** | **C++17 / C++20** · **C** · **Python** · **QML** |
+| **`Desktop & OS`** | **Qt 6 / Qt Quick** · **Win32 API** · **C++/WinRT** · **Core Audio** · **GSMTC** |
+| **`AI & Data Systems`** | **llama.cpp** · **Tool Calling & Agent Runtime** · **RAG** · **NL2SQL** · **PostgreSQL** |
+| **`Vision & Graphics`** | **OpenCV** *(Calibration / ArUco / `solvePnP`)* · **Vulkan** *(Vulkan-Hpp RAII)* · **GLFW** |
+| **`Hardware & Tooling`** | **Raspberry Pi Pico SDK** *(I²C / OLED)* · **CMake** · **MSVC** · **Git** · **Docker** |
 
-从项目中的具体问题出发，先建立能解释“为什么、怎么做”的思路，再用代码验证，按需要深入。近期主线是 **C++ 系统开发与 Agent 工程**，持续关注可靠的工具调用、权限边界和自然的桌面体验。
+<br />
 
-> I build to understand — from the system boundary to the user experience.
+> **Engineering Approach** — 从项目中的具体工程问题切入，先建立能够清晰解释 *“Why & How”* 的系统模型与边界假设，再以最小完备代码验证，按需向底层深入。
+
+<br />
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/colophon-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/colophon-light.svg" />
+    <img alt="I build to understand — from the system boundary to the user experience." src="./assets/colophon-light.svg" width="100%" />
+  </picture>
+</div>

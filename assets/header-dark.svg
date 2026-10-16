@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 230" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-dark" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.75" fill="#30363D" opacity="0.65"/>
+    </pattern>
+    <linearGradient id="surface-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+    <linearGradient id="accent-line-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E06C50"/>
+      <stop offset="45%" stop-color="#58A6FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#30363D" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="880" height="230" rx="10" fill="url(#surface-dark)" stroke="#21262D" stroke-width="1"/>
+  <rect x="1" y="1" width="878" height="228" rx="9" fill="url(#grid-dark)"/>
+
+  <!-- Top Editorial Meta Bar -->
+  <line x1="36" y1="42" x2="844" y2="42" stroke="#21262D" stroke-width="1"/>
+  <line x1="36" y1="42" x2="168" y2="42" stroke="#E06C50" stroke-width="1.5"/>
+
+  <text x="36" y="30" fill="#8B949E" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10.5" letter-spacing="2">
+    ISSUE 01 // PERSONAL MONOGRAPH
+  </text>
+  <text x="844" y="30" text-anchor="end" fill="#8B949E" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10.5" letter-spacing="1.5">
+    C++20 · QT 6 · WIN32 · AGENT RUNTIME
+  </text>
+
+  <!-- Left Column: Editorial Identity -->
+  <text x="36" y="96" fill="#F0F6FC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="-0.8">
+    Fengyue Shao
+  </text>
+  <circle cx="262" cy="84" r="3.5" fill="#E06C50"/>
+  <text x="276" y="94" fill="#8B949E" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="17">
+    Systems &amp; Desktop Engineer in Training
+  </text>
+
+  <text x="36" y="132" fill="#C9D1D9" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="400">
+    从真实系统问题出发，构建兼具原生体验与清晰边界的桌面软件与 Agent 工具。
+  </text>
+  <text x="36" y="156" fill="#8B949E" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+    Crafting native Windows interfaces, isolated plugin hosts, and verifiable local agent workflows.
+  </text>
+
+  <!-- Bottom Left Tags -->
+  <g transform="translate(36, 178)">
+    <rect x="0" y="0" width="132" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="12" cy="12" r="3" fill="#E06C50"/>
+    <text x="22" y="15.5" fill="#C9D1D9" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10.5">Native Desktop</text>
+
+    <rect x="142" y="0" width="136" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="154" cy="12" r="3" fill="#58A6FF"/>
+    <text x="164" y="15.5" fill="#C9D1D9" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10.5">System Boundary</text>
+
+    <rect x="288" y="0" width="138" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="300" cy="12" r="3" fill="#3FB950"/>
+    <text x="310" y="15.5" fill="#C9D1D9" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10.5">Agent Execution</text>
+  </g>
+
+  <!-- Right Column: Minimalist Architectural Schematic -->
+  <g transform="translate(615, 62)">
+    <!-- Outer Frame -->
+    <rect x="0" y="0" width="229" height="140" rx="6" fill="#0D1117" fill-opacity="0.85" stroke="#30363D" stroke-width="1"/>
+    <line x1="0" y1="26" x2="229" y2="26" stroke="#21262D" stroke-width="1"/>
+    <circle cx="13" cy="13" r="2.5" fill="#E06C50"/>
+    <circle cx="23" cy="13" r="2.5" fill="#30363D"/>
+    <circle cx="33" cy="13" r="2.5" fill="#30363D"/>
+    <text x="217" y="16.5" text-anchor="end" fill="#6E7681" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9.5">
+      ARCH // LAYERED
+    </text>
+
+    <!-- Layer 1 -->
+    <rect x="14" y="36" width="201" height="24" rx="3" fill="#161B22" stroke="#30363D" stroke-width="0.8"/>
+    <text x="24" y="51.5" fill="#F0F6FC" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10">01</text>
+    <text x="44" y="51.5" fill="#C9D1D9" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10">HUD &amp; QML Surface</text>
+    <text x="205" y="51.5" text-anchor="end" fill="#58A6FF" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9">UI</text>
+
+    <!-- Connector -->
+    <line x1="114.5" y1="60" x2="114.5" y2="69" stroke="#30363D" stroke-width="1"/>
+
+    <!-- Layer 2 -->
+    <rect x="14" y="69" width="201" height="24" rx="3" fill="#161B22" stroke="#30363D" stroke-width="0.8"/>
+    <text x="24" y="84.5" fill="#F0F6FC" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10">02</text>
+    <text x="44" y="84.5" fill="#C9D1D9" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10">C++20 / WinRT Host</text>
+    <text x="205" y="84.5" text-anchor="end" fill="#E06C50" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9">SYS</text>
+
+    <!-- Connector -->
+    <line x1="114.5" y1="93" x2="114.5" y2="102" stroke="#30363D" stroke-width="1" stroke-dasharray="2 2"/>
+
+    <!-- Layer 3 -->
+    <rect x="14" y="102" width="201" height="24" rx="3" fill="#161B22" stroke="#30363D" stroke-width="0.8"/>
+    <text x="24" y="117.5" fill="#F0F6FC" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10">03</text>
+    <text x="44" y="117.5" fill="#C9D1D9" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10">IPC Plugin &amp; Agent</text>
+    <text x="205" y="117.5" text-anchor="end" fill="#3FB950" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9">SANDBOX</text>
+  </g>
+</svg>

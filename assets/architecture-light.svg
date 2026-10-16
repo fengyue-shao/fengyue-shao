@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 246" width="100%" height="100%">
+  <defs>
+    <pattern id="arch-grid-light" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E4E4E7" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- Outer Container -->
+  <rect width="880" height="246" rx="10" fill="#FCFBF9" stroke="#E4E4E7" stroke-width="1"/>
+  <rect x="1" y="1" width="878" height="244" rx="9" fill="url(#arch-grid-light)" opacity="0.55"/>
+
+  <!-- Header Strip -->
+  <line x1="28" y1="38" x2="852" y2="38" stroke="#E4E4E7" stroke-width="1"/>
+  <circle cx="36" cy="23" r="3" fill="#D95D39"/>
+  <text x="48" y="26.5" fill="#27272A" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10.5" font-weight="600" letter-spacing="1.2">
+    FIG 01 // WINDOWS SIDEBAR &amp; AGENT RUNTIME BOUNDARY
+  </text>
+  <text x="852" y="26.5" text-anchor="end" fill="#71717A" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" letter-spacing="1">
+    HOST-ISOLATED ARCHITECTURE
+  </text>
+
+  <!-- Column 1: Interaction Surface -->
+  <g transform="translate(28, 54)">
+    <rect x="0" y="0" width="248" height="168" rx="6" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+    <rect x="0" y="0" width="248" height="4" rx="2" fill="#2563EB"/>
+    <text x="16" y="26" fill="#2563EB" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" font-weight="600" letter-spacing="1">
+      01 / INTERACTION SURFACE
+    </text>
+    <text x="16" y="45" fill="#18181B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="600">
+      Qt 6 &amp; QML Shell
+    </text>
+
+    <rect x="14" y="58" width="220" height="28" rx="4" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+    <text x="24" y="76" fill="#27272A" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif" font-size="11.5">顶部悬停控制栏 · 精简/展开切换</text>
+
+    <rect x="14" y="92" width="220" height="28" rx="4" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+    <text x="24" y="110" fill="#27272A" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif" font-size="11.5">灵动岛 HUD · 持续活动与结果反馈</text>
+
+    <rect x="14" y="126" width="220" height="28" rx="4" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+    <text x="24" y="144" fill="#52525B" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif" font-size="11.5">多屏拓扑感知 · 宿主统一渲染</text>
+  </g>
+
+  <!-- Arrow 1 <-> 2 -->
+  <g transform="translate(276, 126)">
+    <line x1="4" y1="12" x2="36" y2="12" stroke="#2563EB" stroke-width="1.2"/>
+    <polygon points="36,9 42,12 36,15" fill="#2563EB"/>
+    <polygon points="8,9 2,12 8,15" fill="#2563EB"/>
+    <text x="21" y="4" text-anchor="middle" fill="#71717A" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="8.5">Signals</text>
+  </g>
+
+  <!-- Column 2: Native Host Core -->
+  <g transform="translate(318, 54)">
+    <rect x="0" y="0" width="248" height="168" rx="6" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+    <rect x="0" y="0" width="248" height="4" rx="2" fill="#D95D39"/>
+    <text x="16" y="26" fill="#D95D39" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" font-weight="600" letter-spacing="1">
+      02 / NATIVE HOST CORE
+    </text>
+    <text x="16" y="45" fill="#18181B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="600">
+      C++20 · Win32 · WinRT
+    </text>
+
+    <rect x="14" y="58" width="220" height="28" rx="4" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+    <text x="24" y="76" fill="#27272A" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif" font-size="11.5">Core Audio · GSMTC 媒体会话控制</text>
+
+    <rect x="14" y="92" width="220" height="28" rx="4" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+    <text x="24" y="110" fill="#27272A" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif" font-size="11.5">系统监控 · 网络/设备/剪贴板/通知</text>
+
+    <rect x="14" y="126" width="220" height="28" rx="4" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+    <text x="24" y="144" fill="#52525B" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif" font-size="11.5">异步生命周期 · 权限与状态门控</text>
+  </g>
+
+  <!-- Isolation Boundary Line & IPC Arrow -->
+  <g transform="translate(566, 50)">
+    <line x1="20" y1="0" x2="20" y2="176" stroke="#D95D39" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+    <rect x="4" y="68" width="32" height="36" rx="4" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+    <text x="20" y="83" text-anchor="middle" fill="#D95D39" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="8" font-weight="600">JSON</text>
+    <text x="20" y="95" text-anchor="middle" fill="#71717A" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="7.5">IPC</text>
+  </g>
+
+  <!-- Column 3: Out-of-Process Sandbox & Agent -->
+  <g transform="translate(606, 54)">
+    <rect x="0" y="0" width="246" height="168" rx="6" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+    <rect x="0" y="0" width="246" height="4" rx="2" fill="#16A34A"/>
+    <text x="16" y="26" fill="#16A34A" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" font-weight="600" letter-spacing="1">
+      03 / ISOLATED EXECUTION
+    </text>
+    <text x="16" y="45" fill="#18181B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="600">
+      Plugins &amp; Agent Runtime
+    </text>
+
+    <rect x="14" y="58" width="218" height="28" rx="4" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+    <text x="24" y="76" fill="#27272A" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif" font-size="11.5">独立进程插件 · 宿主零外部 UI 注入</text>
+
+    <rect x="14" y="92" width="218" height="28" rx="4" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+    <text x="24" y="110" fill="#27272A" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif" font-size="11.5">受控工具调用 · 显式能力与权限边界</text>
+
+    <rect x="14" y="126" width="218" height="28" rx="4" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+    <text x="24" y="144" fill="#52525B" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif" font-size="11.5">执行证据采集 · 结果状态回传与验收</text>
+  </g>
+</svg>
