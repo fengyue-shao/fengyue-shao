@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 218 40" width="218" height="40">
+  <defs>
+    <!-- Dynamic Island capsule clipPath with spline width expansion -->
+    <clipPath id="island-clip">
+      <rect x="2" y="3" width="212" height="34" rx="17">
+        <animate
+          attributeName="width"
+          values="34; 216; 212"
+          keyTimes="0; 0.78; 1"
+          dur="0.68s"
+          calcMode="spline"
+          keySplines="0.22 1 0.36 1; 0.33 1 0.68 1"
+          fill="freeze"
+        />
+      </rect>
+    </clipPath>
+
+    <!-- Soft emerald glow for the checkmark badge -->
+    <radialGradient id="check-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3FB950" stop-opacity="0.42" />
+      <stop offset="100%" stop-color="#3FB950" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <style>
+    /* 1. Dynamic Island Capsule Body */
+    .island-bg {
+      fill: #13171F;
+      stroke: #2B323D;
+      stroke-width: 1.2px;
+      transform-origin: 19px 20px;
+      animation: island-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @media (prefers-color-scheme: light) {
+      .island-bg {
+        fill: #18181B;
+        stroke: #27272A;
+      }
+    }
+
+    @keyframes island-pop {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* 2. Left Spinner Ring (0s -> 0.56s) */
+    .spinner-group {
+      transform-origin: 19px 20px;
+      animation:
+        spinner-rotate 0.48s linear infinite,
+        spinner-exit 0.16s ease-out 0.52s forwards;
+    }
+
+    .spinner-track {
+      fill: none;
+      stroke: #2D333B;
+      stroke-width: 2.2px;
+    }
+
+    .spinner-arc {
+      fill: none;
+      stroke: #E59A59;
+      stroke-width: 2.2px;
+      stroke-linecap: round;
+      stroke-dasharray: 22 40;
+    }
+
+    @keyframes spinner-rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes spinner-exit {
+      0% {
+        opacity: 1;
+        transform: scale(1) rotate(300deg);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.35) rotate(390deg);
+      }
+    }
+
+    /* 3. Green Checkmark Badge Pop-in (0.50s+) */
+    .check-badge {
+      transform-origin: 19px 20px;
+      opacity: 0;
+      animation: check-pop 0.42s cubic-bezier(0.25, 1.38, 0.4, 1) 0.50s forwards;
+    }
+
+    .check-circle {
+      fill: #2EA043;
+    }
+
+    .check-halo {
+      transform-origin: 19px 20px;
+      opacity: 0;
+      animation: halo-pulse 2.8s ease-in-out 0.9s infinite;
+    }
+
+    .check-tick {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 2.1px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 18;
+      stroke-dashoffset: 18;
+      animation: tick-draw 0.26s cubic-bezier(0.33, 1, 0.68, 1) 0.60s forwards;
+    }
+
+    @keyframes check-pop {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes tick-draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes halo-pulse {
+      0%, 100% {
+        opacity: 0.35;
+        transform: scale(0.95);
+      }
+      50% {
+        opacity: 0.85;
+        transform: scale(1.22);
+      }
+    }
+
+    /* 4. Right Greeting Text Slide and Fade-in */
+    .greeting-text {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 16px;
+      font-weight: 600;
+      fill: #E59A59;
+      letter-spacing: -0.2px;
+      opacity: 0;
+      animation: text-slide-in 0.46s cubic-bezier(0.22, 1, 0.36, 1) 0.24s forwards;
+    }
+
+    @keyframes text-slide-in {
+      0% {
+        opacity: 0;
+        transform: translateX(-8px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+
+  <!-- Dynamic Island Capsule Body -->
+  <rect class="island-bg" x="2" y="3" width="212" height="34" rx="17">
+    <animate
+      attributeName="width"
+      values="34; 216; 212"
+      keyTimes="0; 0.78; 1"
+      dur="0.68s"
+      calcMode="spline"
+      keySplines="0.22 1 0.36 1; 0.33 1 0.68 1"
+      fill="freeze"
+    />
+  </rect>
+
+  <!-- Clipped Inner Content -->
+  <g clip-path="url(#island-clip)">
+    <!-- Subtle ambient emerald glow behind checkmark -->
+    <circle class="check-halo" cx="19" cy="20" r="14" fill="url(#check-glow)" />
+
+    <!-- Phase 1: Spinning Ring -->
+    <g class="spinner-group">
+      <circle class="spinner-track" cx="19" cy="20" r="8.5" />
+      <circle class="spinner-arc" cx="19" cy="20" r="8.5" />
+    </g>
+
+    <!-- Phase 2: Green Checkmark Badge -->
+    <g class="check-badge">
+      <circle class="check-circle" cx="19" cy="20" r="9.5" />
+      <path class="check-tick" d="M 14.8 20.2 L 17.7 23.1 L 23.5 17.1" />
+    </g>
+
+    <!-- Right Text: Hi, I'm fengyue. -->
+    <text class="greeting-text" x="38" y="25.2">Hi, I'm fengyue.</text>
+  </g>
+</svg>
