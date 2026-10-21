@@ -1,6 +1,6 @@
 <img src="./assets/hi.svg" alt="Hi, I'm fengyue." height="38" />
 
-`本科在读` `C++ / Qt` `Tinkering with Agents`
+`Born 2006-05` `计算机科学与技术 · 大三在读` `C++ / Qt` `Tinkering with Agents`
 
 [English](./README.md)
 

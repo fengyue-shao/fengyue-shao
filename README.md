@@ -1,6 +1,6 @@
 <img src="./assets/hi.svg" alt="Hi, I'm fengyue." height="38" />
 
-`Undergrad` `C++ / Qt` `Tinkering with Agents`
+`Born 2006-05` `Junior CS Undergrad` `C++ / Qt` `Tinkering with Agents`
 
 [中文](./README.zh-CN.md)
 
